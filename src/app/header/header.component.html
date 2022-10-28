@@ -1,0 +1,12 @@
+<!-- <ul>
+    <li><a routerLink="/home" routerLinkActive="actvComp">Home</a></li>
+    <li><a [routerLink]="['/services', '400']" routerLinkActive="actvComp">Services</a></li>
+    <li><a [routerLink]="['/services', '204']" routerLinkActive="actvComp">About us</a></li>
+    <li><a [routerLink]="['/services', '204']" routerLinkActive="actvComp">Career</a></li>
+    <li><a [routerLink]="['/services', '204']" routerLinkActive="actvComp">Contact</a></li>
+</ul> -->
+<ul>
+    <li *ngFor="let lst of nvLst">
+        <a [routerLink]="lst.path">{{lst.navNm}}</a>
+    </li>
+</ul>

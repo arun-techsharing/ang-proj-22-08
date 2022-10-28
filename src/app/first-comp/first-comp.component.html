@@ -1,0 +1,80 @@
+<p>Data printed in H1 using Interpolation - one of data binding from Component ts to template html</p>
+<h1>{{title}}</h1>
+
+<p>Property Binding - one of data binding from Component ts to template html</p>
+<button [disabled]="isDisabled" (click)="submitFrm('hi')">Submit</button>
+<img src="https://angular.io/assets/images/logos/angular/{{imgNm}}">
+
+<button (click)="shwStuData()">Show Student Data</button>
+<p *ngIf="showStuDt == true">Student Info</p>
+<p>ngIf directives</p>
+<p>Select user type:</p>
+<input type="radio" name="userTyp" (click)="toggleUserTyp('T')" checked> Teacher
+<input type="radio" name="userTyp" (click)="toggleUserTyp('S')"> Student
+
+<div *ngIf="userType == 'Teacher'">
+    <p>Teacher data</p>
+    <h3>Teacher Roll No. {{stundetData.rollNo}}</h3>
+    <h3>Teacher Name: {{stundetData.name}}</h3>
+    <h3>Teacher Class: {{stundetData.class}}</h3> 
+</div>
+<div *ngIf="userType == 'Student'">
+    <p>Student data</p>
+    <h3>Student Roll No. {{stundetData.rollNo}}</h3>
+    <h3>Student Name: {{stundetData.name}}</h3>
+    <h3>Student Class: {{stundetData.class}}</h3>
+    <h3>Student Section: {{stundetData.section}}</h3>
+    <h3>Student Age: {{stundetData.age}}</h3>
+    <h3>Student Contact: {{stundetData.cnt}}</h3>
+    <h3>Student Data: {{stundetData}}</h3>
+</div>
+
+<!-- <div *ngIf="userType == 'Teacher';then teachrBlk else studentBlk">
+    <p>values displayed inside the condition block not from then block</p>
+</div>
+<ng-template #studentBlk>
+    <p>values displayed from the else block based on condition</p>
+    <p>Student data</p>
+    <h3>Student Roll No. {{stundetData.id}}</h3>
+    <h3>Student Name: {{stundetData.name}}</h3>
+    <h3>Student Class: {{stundetData.class}}</h3>
+    <h3>Student Section: {{stundetData.section}}</h3>
+    <h3>Student Age: {{stundetData.age}}</h3>
+    <h3>Student Contact: {{stundetData.cnt}}</h3>
+    <h3>Student Data: {{stundetData}}</h3>
+</ng-template>
+<ng-template #teachrBlk>
+    <p>values displayed from the then block based on condition</p>
+    <p>Teacher data</p>
+    <h3>Teacher Roll No. {{stundetData.id}}</h3>
+    <h3>Teacher Name: {{stundetData.name}}</h3>
+    <h3>Teacher Class: {{stundetData.class}}</h3>   
+</ng-template> -->
+
+<p>ngFor directives</p>
+<ul>
+    <li *ngFor="let sub of subjects;let in = index">
+        {{in+1}}{{sub}}
+    </li>
+</ul>
+
+<table>
+
+    <th>Roll No</th>
+    <th>Student Name</th>
+    <th>Class</th>
+    <th>Section</th>
+    <th>Age</th>
+    <th>Contact Number</th>
+    <tr *ngFor="let studt of studentList">
+        <td>{{studt.rollNo}}</td>
+        <td>{{studt.name}}</td>
+        <td>{{studt.class}}</td>
+        <td>{{studt.section}}</td>
+        <td>{{studt.age}}</td>
+        <td>{{studt.cnt}}</td>
+    </tr>
+
+</table>
+
+<button (click)="redirctToServices()">Services</button>

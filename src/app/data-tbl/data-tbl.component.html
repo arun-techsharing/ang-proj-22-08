@@ -1,0 +1,20 @@
+
+<table>
+    <tr>
+        <th>EMP ID</th>
+        <th>Full Name</th>
+        <th>Date of Joining</th>
+        <th>Address</th>
+        <th>Contact</th>
+    </tr>
+    <tr *ngFor="let lst of tblDtls">
+        <td>{{lst.empID}}</td>
+        <td>{{lst.fullName}}</td>
+        <td>{{lst.doj}}</td>
+        <td>{{lst.address}}</td>
+        <td>{{lst.cnt}}</td>
+        <td><button (click)="delEmp(lst.empID)">Delete</button></td>
+    </tr>
+</table>
+<button (click)="incrementCount()">Increment Coutner - child comp</button>
+

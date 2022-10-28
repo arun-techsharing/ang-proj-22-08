@@ -1,0 +1,59 @@
+<h1>Services</h1>
+
+<div><label>Student Roll No:</label><input type="text"></div>
+<div><label>Student Name:</label><input type="text"></div>
+<div> <label>Student Class:</label><input type="text"></div>
+<div><label>Student Section:</label><input type="text"></div>
+<div><label>Student Age:</label><input type="text"></div>
+<div><label>Student Contact:</label><input type="text"></div>
+
+<button>Add Student</button>
+
+<h2>People List</h2>
+
+<p>Ng style with condition in html</p>
+<ul>
+    <li *ngFor="let p of peopleLst" [ngStyle]="{'color':p.country == 'India'?'blue':'Red'}">
+        {{p.name}}
+        {{p.country | uppercase}}
+    </li>
+</ul>
+<p>Ng style - applying styles using method</p>
+<ul>
+    <li *ngFor="let p of peopleLst" [ngStyle]="{'color':getColor(p.country)}">
+        {{p.name}}
+        {{p.country | uppercase}}
+    </li>
+</ul>
+
+<p>Ng class - applying class</p>
+<ul>
+    <li *ngFor="let p of peopleLst" [ngClass]="{'cntry-ind':p.country == 'India'}">
+        {{p.name}}
+        {{p.country | lowercase}}
+    </li>
+</ul>
+
+<p>Ng class - applying class using method</p>
+<ul>
+    <li *ngFor="let p of peopleLst" [ngClass]="{'cntry-ind':getColor(p.country)}">
+        {{p.name}}
+        {{p.country | lowercase}}
+    </li>
+</ul>
+
+<p>Angular Pipes</p>
+<span>Today's date {{todayDt}}</span><br />
+<span>Full Date : {{todayDt}}</span><br />
+<span>Short Date : {{todayDt | date:'shortDate'}}</span><br />
+<span>Medium Date : {{todayDt | date:'mediumDate'}}</span><br />
+<span>Full Date : {{todayDt | date:'fullDate'}}</span><br />
+<span>Time : {{todayDt | date:'HH:MM'}}</span><br />
+<span>Time : {{todayDt | date:'hh:mm:ss a'}}</span><br />
+
+<p>{{jsonval | json}}</p>
+<p>{{months}}</p>
+<p>{{months | slice:2:7}}</p>
+<p>{{amount | number:'2.2'}}</p>
+<p>{{marks | percent:'2.2'}}</p>
+
