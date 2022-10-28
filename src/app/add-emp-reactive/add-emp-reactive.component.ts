@@ -42,7 +42,8 @@ export class AddEmpReactiveComponent implements OnInit {
       cnt: new FormControl('', [gtr10]),
       city: new FormControl(),
       email: new FormControl('', [Validators.email]),
-      country: new FormControl('', [Validators.required])
+      country: new FormControl('', [Validators.required]),
+      age:new FormControl()
     }
   );
 
