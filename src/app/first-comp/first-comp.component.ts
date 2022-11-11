@@ -119,8 +119,8 @@ export class FirstCompComponent implements OnInit {
   constructor(private rout: Router) { }
 
   ngOnInit(): void {
+    localStorage.setItem('userType', 'admin');
 
-    
   }
 
   submitFrm(greet: string) {
@@ -143,8 +143,9 @@ export class FirstCompComponent implements OnInit {
     }
   }
 
-  redirctToServices(){
+  redirctToServices() {
     this.rout.navigateByUrl('/services/200');
+
   }
 
 }

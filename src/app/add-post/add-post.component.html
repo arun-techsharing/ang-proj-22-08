@@ -1,0 +1,16 @@
+<h1>Add Post</h1>
+<form [formGroup]="pstFrmGrp" (ngSubmit)="addNewPostDtl()">
+    <div>
+        <label>Title:</label>
+        <input type="text" formControlName="title">
+    </div>
+    <div>
+        <label>Description:</label>
+        <textarea formControlName="desc"></textarea>
+    </div>
+    <div>
+        <label>User Id:</label>
+        <input type="text" formControlName="userId">
+    </div>
+    <button type="submit">Add Post</button>
+</form>

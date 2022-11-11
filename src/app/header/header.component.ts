@@ -23,12 +23,24 @@ export class HeaderComponent implements OnInit {
       path:'/services/200'
     },
     {
-      navNm:'Career',
-      path:'/career'
+      navNm:'Add Emp',
+      path:'/add-employee'
     },
     {
       navNm:'Contact Us',
       path:'/contact'
+    },
+    {
+      navNm:'View Employees',
+      path:'/viewproducts'
+    },
+    {
+      navNm:'Employee Details',
+      path:'/emp-Dtl'
+    },
+    {
+      navNm:'Add Post',
+      path:'/add-post'
     }
   ];
   ngOnInit(): void {

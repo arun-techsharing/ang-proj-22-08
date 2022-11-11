@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { EmpployeeService } from '../empployee.service';
 import { employee } from '../model/employee';
 import { gtr10 } from '../shared/customValidations/empValidations'
 @Component({
@@ -9,7 +10,7 @@ import { gtr10 } from '../shared/customValidations/empValidations'
 })
 export class AddEmpReactiveComponent implements OnInit {
 
-  constructor() { }
+  constructor(private emSv:EmpployeeService) { }
   empDetail: employee;
   cntryList: any = [
     {
@@ -48,6 +49,7 @@ export class AddEmpReactiveComponent implements OnInit {
   );
 
   ngOnInit(): void {
+    console.log(this.emSv.userId)
   }
 
   AddEmp() {

@@ -4,3 +4,25 @@
 <p>
     (this is in the parent comp)value from child component - {{childCounterVal}}
 </p>
+<button (click)="getUserDetails()">Get User Details</button>
+
+<button (click)="getProductDtls()">Get Products</button>
+
+
+<div [formGroup]="prdFrm">
+    <label>Category ID:</label>
+    <input type="text" id="catrgyID" formControlName="prdCatID">
+</div>
+<button (click)="getProdByCatgyId()">Get Products by CAtgy Id</button>
+<table>
+    <tr *ngFor="let p of prodList">
+        <td>{{p._id}}</td>
+        <td>{{p.pdtCatId}}</td>
+        <td>{{p.pdtName}}</td>
+        <td>{{p.pdtPrice}}</td>
+        <td>{{p.pdtDesc}}</td>
+        <td>{{p.pdtImgPath}}</td>
+    </tr>
+</table>
+
+<button (click)="addNewPostDtl()">Add New Post</button>
