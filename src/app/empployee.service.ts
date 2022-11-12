@@ -1,6 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { employee } from './model/employee';
 import { IProduct } from './model/IProduct';
 import { login } from './model/login';
@@ -11,7 +12,7 @@ import { post } from './model/post'
 export class EmpployeeService {
 
   constructor(private http: HttpClient) { }
-  apiURL = "https://credo-shoppingcartv5.herokuapp.com";
+  apiURL = environment.apiURL;
 
   public userId = "101";
   public userType = localStorage.getItem('userType');

@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiURL:"https://credo-shoppingcartv5-dev.herokuapp.com"
 };
 
 /*
