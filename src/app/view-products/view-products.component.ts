@@ -5,6 +5,7 @@ import { EmpployeeService } from '../empployee.service';
 import { IProduct } from '../model/IProduct';
 import { FormControl, FormGroup } from '@angular/forms';
 import { post } from '../model/post';
+import { ToastrService } from 'ngx-toastr'
 @Component({
   selector: 'app-view-products',
   templateUrl: './view-products.component.html',
@@ -12,7 +13,7 @@ import { post } from '../model/post';
 })
 export class ViewProductsComponent implements OnInit {
   @ViewChild('second') secComp = {} as SecondCompComponent;
-  constructor(private empSrv: EmpployeeService) { }
+  constructor(private empSrv: EmpployeeService, private _toastr:ToastrService) { }
   empData: employee[];
   childCounterVal: string;
   userList;
@@ -139,6 +140,11 @@ export class ViewProductsComponent implements OnInit {
     this.empSrv.addNewPost(newPost).subscribe(
       (resp) => {
         console.log(resp);
+        this._toastr.success("New Posrt added in to the database")
+
+      },
+      (error)=>{
+        this._toastr.error("Add post failed, please try again later")
       }
     )
 

@@ -21,7 +21,7 @@ const routes: Routes = [
   {
     path: 'services/:sid',
     component: SecondCompComponent,
-    canActivate:[UserAuthGuard]
+    canActivate: [UserAuthGuard]
   },
   {
     path: 'myshop/contact',
@@ -34,7 +34,7 @@ const routes: Routes = [
   {
     path: 'add-employee',
     component: AddEmpComponent,
-    canActivate:[UserAuthGuard]
+    canActivate: [UserAuthGuard]
   },
   {
     path: 'add-employee-react',
@@ -60,6 +60,14 @@ const routes: Routes = [
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+  },
+  {
+    path: 'review',
+    loadChildren: () => import('./review/review.module').then(m => m.ReviewModule)
   },
   {
     path: '**',

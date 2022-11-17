@@ -19,7 +19,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AddPostComponent } from './add-post/add-post.component';
 import { appInterceptor } from './appInterceptor';
 import { LoginComponent } from './login/login.component';
-
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent, SecondCompComponent, FirstCompComponent, pageNotFoundComp, HeaderComponent, DataTblComponent, ViewProductsComponent, AddEmpComponent, AddEmpReactiveComponent, AddProductComponent, EmpDetailsComponent, AddPostComponent, LoginComponent],
@@ -28,7 +29,9 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
 
   ],
   providers: [

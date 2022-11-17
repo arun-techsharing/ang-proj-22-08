@@ -41,6 +41,14 @@ export class HeaderComponent implements OnInit {
     {
       navNm:'Add Post',
       path:'/add-post'
+    },
+    {
+      navNm:'Add User',
+      path:'/admin/add-user'
+    },
+    {
+      navNm:'Delete User',
+      path:'/admin/delete-user'
     }
   ];
   ngOnInit(): void {

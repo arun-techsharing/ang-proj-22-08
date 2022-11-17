@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { employee } from '../model/employee';
 import { student } from '../model/studentMdl';
-
+import { ToastrService } from 'ngx-toastr'
 
 @Component({
   selector: 'app-data-tbl',
@@ -10,12 +10,14 @@ import { student } from '../model/studentMdl';
 })
 export class DataTblComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private _toastr: ToastrService
+  ) { }
 
-  @Input() tblDtls:employee[]=[];
+  @Input() tblDtls: employee[] = [];
 
   @Output() counterValue: EventEmitter<any> = new EventEmitter();
-  emp:student
+  emp: student
   counter: number = 10;
 
 
@@ -31,9 +33,11 @@ export class DataTblComponent implements OnInit {
     this.counterValue.emit(`updated counter ${this.counter}`);
   }
 
-  delEmp(eID:number){
+  delEmp(eID: number) {
     console.log(eID);
     this.empIDChange.emit(eID);
+
+    this._toastr.success("Employee is successfully deleted")
 
   }
 }
